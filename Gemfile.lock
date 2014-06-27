@@ -64,6 +64,7 @@ GEM
     emblem-source (0.3.16)
     erubis (2.7.0)
     execjs (2.2.1)
+    ffaker (1.24.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -141,6 +142,7 @@ DEPENDENCIES
   ember-rails
   ember-source
   emblem-rails
+  ffaker
   haml-rails
   jquery-rails
   pg
