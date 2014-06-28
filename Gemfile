@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby "2.1.2"
 gem 'rails', '4.1.2'
 
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 gem 'decent_exposure'
 gem 'ember-rails'
 gem 'ember-source'
@@ -12,8 +12,8 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'puma'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails'
+gem 'uglifier'
 
 group :development do
   gem 'spring'
