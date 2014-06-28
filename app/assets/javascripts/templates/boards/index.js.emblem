@@ -1,0 +1,8 @@
+section#boards_index
+
+  h1 My Boards
+
+  .board_cards
+    each board in controller
+      = link-to 'board' board tagName="div" classNames="card"
+          .name= board.name
