@@ -10,6 +10,7 @@ gem 'ffaker'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
+gem 'puma'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 
