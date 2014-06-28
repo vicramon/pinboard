@@ -1,0 +1,2 @@
+class EmberController < AuthenticatedController
+end

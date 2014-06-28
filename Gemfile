@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby "2.1.2"
 gem 'rails', '4.1.2'
 
+gem 'authem', '~> 2.0'
 gem 'coffee-rails'
 gem 'decent_exposure'
 gem 'ember-rails'

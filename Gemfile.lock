@@ -30,6 +30,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    authem (2.0.0)
+      activesupport (>= 4.0.4)
+      bcrypt (~> 3.1)
+      railties (~> 4.0)
     barber (0.4.2)
       ember-source
       execjs
@@ -37,7 +41,14 @@ GEM
     barber-emblem (0.1.1)
       barber (>= 0.4.1)
       emblem-source
+    bcrypt (3.1.7)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -141,6 +152,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authem (~> 2.0)
   coffee-rails
   decent_exposure
   ember-rails
