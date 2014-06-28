@@ -3,6 +3,7 @@ ruby "2.1.2"
 gem 'rails', '4.1.2'
 
 gem 'coffee-rails', '~> 4.0.0'
+gem 'decent_exposure'
 gem 'ember-rails'
 gem 'ember-source'
 gem 'emblem-rails'

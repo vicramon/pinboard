@@ -45,6 +45,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    decent_exposure (2.3.2)
     ember-data-source (1.0.0.beta.8)
       ember-source
     ember-rails (0.15.0)
@@ -141,6 +142,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  decent_exposure
   ember-rails
   ember-source
   emblem-rails
