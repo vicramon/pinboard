@@ -1,4 +1,7 @@
 header
+  .right
+    li Vic Ramon
+    li: a href='/sign_out' Sign out
   #logo
     link-to 'boards.index'
       img src='/assets/logo.png'
