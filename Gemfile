@@ -16,12 +16,17 @@ gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
 
+group :development, :test do
+  gem 'pry-rails'
+end
+
 group :development do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
 
-group :development, :test do
-  gem 'pry-rails'
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end

@@ -7,6 +7,4 @@
 #= require_self
 #= require app
 
-# for more details see: http://emberjs.com/guides/application/
-window.App = Ember.Application.create()
-
+window.App = Ember.Application.create(rootElement: '#ember-app', LOG_TRANSITIONS: true, LOG_TRANSITIONS_INTERNAL: true)
