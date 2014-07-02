@@ -1,0 +1,5 @@
+.card
+  if isEditing
+    view Ember.TextArea value=model.text
+  else
+    model.text

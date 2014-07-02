@@ -10,13 +10,23 @@ namespace :db do
       password_confirmation: 'password')
 
     5.times do
-      User.create(name: Faker::Name.name,
-                  email: Faker::Internet.email,
-                  password: 'password',
-                  password_confirmation: 'password')
+      User.create(
+        name: Faker::Name.name,
+        email: Faker::Internet.email,
+        password: 'password',
+        password_confirmation: 'password')
     end
 
-    Board.create(name: 'My Pinboard', user: user)
+    board = Board.create(name: 'My Pinboard', user: user)
+
+    5.times do
+      Item.create(
+        kind: 'card',
+        x_position: 1 + rand(700),
+        y_position: 1 + rand(600),
+        board: board,
+        text: Faker::HipsterIpsum.sentence)
+    end
 
   end
 end

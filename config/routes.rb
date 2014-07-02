@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :boards
     resources :users
+    resources :items
   end
 
   root to: 'home#index'
