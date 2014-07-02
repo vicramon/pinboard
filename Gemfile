@@ -8,6 +8,7 @@ gem 'decent_exposure'
 gem 'ember-rails'
 gem 'ember-source'
 gem 'emblem-rails'
+gem 'fabrication'
 gem 'ffaker'
 gem 'haml-rails'
 gem 'jquery-rails'
@@ -29,4 +30,8 @@ end
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  gem 'poltergeist'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
 end
