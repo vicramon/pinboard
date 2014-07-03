@@ -45,7 +45,8 @@ App.CardView = Ember.View.extend
         @get('model').setProperties
           top: position.top
           left: position.left
-        @get('model').save()
+        @get('selectedItems').forEach (item) =>
+          item.save() if item.get('isDirty')
 
   selectMeOnly: -> @set 'selectedItems', [@get('model')]
   selectMe: ->     @get('selectedItems').addObject(@get('model'))
