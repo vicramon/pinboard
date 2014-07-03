@@ -16,7 +16,7 @@ App.BoardView = Ember.View.extend
     @$().droppable
       accept: ".new_card"
       drop: (event, ui) =>
-        @get('controller').createCard(ui.offset.top, ui.offset.left)
+        @get('controller').createCard(ui.offset.top-35, ui.offset.left-85)
 
   selectable: ->
     @$().selectable
