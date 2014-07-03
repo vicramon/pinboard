@@ -64,9 +64,13 @@ App.CardView = Ember.View.extend
       @selectMeOnly()
 
   doubleClick: ->
-    @set('controller.isEditing', true)
+    @set('model.isEditing', true)
     Ember.run.later @, ( -> @$('textarea').focus() ), 0
 
+  isEditingObserver: ( ->
+    @set 'model.isEditing', false  unless @get('isSelected')
+  ).observes('isSelected')
+
   focusOut: ->
-    @set('controller.isEditing', false)
+    @set('model.isEditing', false)
     @get('model').save()
