@@ -1,35 +1,85 @@
 @import 'whitespace-reset', 'mixins', 'jquery-ui'
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700)
 
+$font-size: 14px
+$font-family: 'Roboto', Helvetica, Arial
+
 html, body
-  font-family: 'Roboto'
-  font-size: 14px
+  font-family: $font-family
+  font-size: $font-size
   height: 100%
 
 #ember-app, .application-view
   height: 100%
   background: #F3F3F3
 
+li
+  list-style-type: none
+
 header
   background: #2B2D33
   height: 42px
   padding: 0 1%
+  color: #999
   #logo
     padding: 8px 0 0 0
-  .right
+  .board_tools
+    position: absolute
+    left: 35%
+    top: 10px
     li
       display: inline-block
-      list-item: none
-      color: #999
-      padding-left: 25px
+      list-style-type: none
+      padding-right: 25px
+      .new_card
+        cursor: pointer
+      &.items
+        padding-right: 10px
+  .right
     float: right
     padding: 10px 6px 0 0
+    li
+      display: inline-block
+      list-style-type: none
+      padding-left: 25px
     a, a:hover, a:visited, a:active
       color: #999
       text-decoration: none
       &:hover
         text-decoration: underline
 
+.new_card_helper
+  position: absolute
+  width: 100px
+  height: 70px
+  background: white
+  border: 2px solid #ccc
+
+section#board
+  height: 100%
+  margin-left: 11px
+  .card_container
+    display: inline-block
+    position: absolute
+    &.selected
+      .card
+        border: 2px solid #49A1FF
+        padding: 13px 19px
+    .card
+      background: white
+      display: inline-block
+      padding: 14px 20px
+      width: 225px
+      height: 105px
+      margin: 3px
+      border: 1px solid #ddd
+      +cursor-grab
+      textarea
+        width: 100%
+        height: 100%
+        border: none
+        font-size: $font-size
+        font-family: $font-family
 
 section#boards_index
   padding: 30px 0 0 30px
@@ -50,25 +100,6 @@ section#boards_index
         font-weight: 300
         font-size: 22px
 
-section#board
-  height: 100%
-  .card_container
-    display: inline-block
-    position: absolute
-    .card
-      background: white
-      display: inline-block
-      padding: 10px 25px
-      width: 240px
-      height: 115px
-      margin: 4px
-      +cursor-grab
-      textarea
-        width: 100%
-        height: 100%
-        border: none
-        font-size: 14px
-        font-family: Roboto
 
 section#home
   width: 300px

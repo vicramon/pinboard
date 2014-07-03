@@ -5,5 +5,6 @@ header
   #logo
     link-to 'boards.index'
       img src='/assets/logo.png'
+  outlet 'boardTools'
 
 outlet

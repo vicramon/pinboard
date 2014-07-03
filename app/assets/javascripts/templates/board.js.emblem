@@ -1,5 +1,3 @@
-section#board
-
-  each item in model.items
-    if item.isCard
-      = render 'card' item
+each item in model.items
+  if item.isCard
+    = render 'card' item

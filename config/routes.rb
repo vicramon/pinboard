@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/sign_out', to: 'sessions#destroy', as: 'sign_out'
 
   get '/boards', to: 'ember#index', as: 'boards'
+  get '/boards/:id', to: 'ember#index', as: 'board'
 
   namespace :api do
     resources :boards
