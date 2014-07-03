@@ -35,18 +35,14 @@ App.CardView = Ember.View.extend
         top_distance  =  model.get('top') - ui.position.top
         left_distance = model.get('left') - ui.position.left
 
-        @get('selectedItems').forEach (item) =>
-          return if item == @get('model')
+        @get('selectedItems').without(@get('model')).forEach (item) =>
           item.set 'top',  item.get('startTop')  - top_distance
           item.set 'left', item.get('startLeft') - left_distance
 
       stop: (event, ui) =>
         position = $(event.target).position()
-        @get('model').setProperties
-          top: position.top
-          left: position.left
-        @get('selectedItems').forEach (item) =>
-          item.save() if item.get('isDirty')
+        @get('model').setProperties top: position.top, left: position.left
+        @get('selectedItems').forEach (item) => item.save() if item.get('isDirty')
 
   selectMeOnly: -> @set 'selectedItems', [@get('model')]
   selectMe: ->     @get('selectedItems').addObject(@get('model'))
