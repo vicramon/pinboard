@@ -27,6 +27,9 @@ App.BoardView = Ember.View.extend
 
       selected: (event, ui) =>
         view = Ember.View.views[ui.selected.id]
-        view.selectMe()
+        if event.shiftKey
+          view.invertSelection()
+        else
+          view.selectMe()
 
   click: -> @get('controller').clearSelected()

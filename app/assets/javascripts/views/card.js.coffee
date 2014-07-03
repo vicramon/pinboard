@@ -1,6 +1,6 @@
 App.CardView = Ember.View.extend
   classNames: ['card_container']
-  classNameBindings: ['selected']
+  classNameBindings: ['isSelected:selected']
   attributeBindings: ['style']
 
   board: Em.computed.alias 'controller.controllers.board'
@@ -8,7 +8,7 @@ App.CardView = Ember.View.extend
   selectedItems: Em.computed.alias 'board.selectedItems'
   style: Em.computed.alias 'model.computedStyle'
 
-  selected: ( ->
+  isSelected: ( ->
     true if @get('selectedItems').find (item) =>
       item == @get('model')
   ).property('selectedItems.@each')
@@ -19,6 +19,7 @@ App.CardView = Ember.View.extend
   draggable: ->
     @$().draggable
       containment: '#board'
+      distance: 15
       snap: '.card_container'
       snapMode: 'both'
       snapTolerance: 5
@@ -49,6 +50,7 @@ App.CardView = Ember.View.extend
   selectMeOnly: -> @set 'selectedItems', [@get('model')]
   selectMe: ->     @get('selectedItems').addObject(@get('model'))
   deselectMe: ->   @get('selectedItems').removeObject(@get('model'))
+  invertSelection: -> if @get('isSelected') then @deselectMe() else @selectMe()
 
   click: (event) ->
     @handleClickSelection()
@@ -56,10 +58,10 @@ App.CardView = Ember.View.extend
 
   handleDragStartSelection: ->
     return @selectMe() if event.shiftKey or Em.isEmpty(@get('selectedItems'))
-    return @selectMeOnly() unless @get('selected')
+    return @selectMeOnly() unless @get('isSelected')
 
   handleClickSelection: ->
-    return @deselectMe() if @get('selected')
+    return @deselectMe() if @get('isSelected')
     return @selectMe() if event.shiftKey
     @selectMeOnly()
 
