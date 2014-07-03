@@ -9,3 +9,5 @@ App.BoardController = Ember.ObjectController.extend
       y_position: top
       x_position: left
     item.save()
+
+  destroySelected: -> @get('selectedItems').forEach (item) => item.destroyRecord()

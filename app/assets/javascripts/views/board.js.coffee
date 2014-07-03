@@ -4,6 +4,12 @@ App.BoardView = Ember.View.extend
 
   didInsertElement: ->
     @droppable()
+    Mousetrap.bind "backspace", =>
+      @get('controller').destroySelected()
+      return false
+
+  willDestroyElement: ->
+    Mousetrap.unbind "backspace"
 
   droppable: ->
     @$().droppable

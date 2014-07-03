@@ -13,6 +13,10 @@ class Api::ItemsController < Api::BaseController
     respond_with Item.find(params[:id]).update(item_params)
   end
 
+  def destroy
+    respond_with Item.find(params[:id]).destroy
+  end
+
   private
 
   def item_params
