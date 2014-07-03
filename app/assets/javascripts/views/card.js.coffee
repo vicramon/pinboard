@@ -22,7 +22,7 @@ App.CardView = Ember.View.extend
       distance: 15
       snap: '.card_container'
       snapMode: 'both'
-      snapTolerance: 5
+      snapTolerance: 3
       start: (event, ui) =>
         @handleDragStartSelection()
 
