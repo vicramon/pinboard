@@ -61,9 +61,10 @@ App.CardView = Ember.View.extend
     return @selectMeOnly() unless @get('isSelected')
 
   handleClickSelection: ->
-    return @deselectMe() if @get('isSelected')
-    return @selectMe() if event.shiftKey
-    @selectMeOnly()
+    if event.shiftKey
+      @invertSelection()
+    else
+      @selectMeOnly()
 
   doubleClick: ->
     @set('controller.isEditing', true)
