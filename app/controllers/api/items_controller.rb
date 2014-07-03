@@ -20,7 +20,7 @@ class Api::ItemsController < Api::BaseController
   private
 
   def item_params
-    params.require(:item).permit(:text, :top, :left, :width, :height, :kind, :board_id)
+    params.require(:item).permit(:text, :top, :left, :width, :height, :kind, :board_id, :url)
   end
 
 end

@@ -3,3 +3,5 @@ each item in model.items
     render 'card' item
   if item.isText
     render 'text' item
+  if item.isImage
+    render 'image' item

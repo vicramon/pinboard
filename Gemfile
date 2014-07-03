@@ -10,6 +10,7 @@ gem 'ember-source'
 gem 'emblem-rails'
 gem 'fabrication'
 gem 'ffaker'
+gem 'filepicker-rails'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
@@ -18,6 +19,7 @@ gem 'sass-rails'
 gem 'uglifier'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry-rails'
 end
 

@@ -2,3 +2,4 @@
   li.item Items:
   li: view App.NewCardView
   li: view App.NewTextView
+  li: view App.NewImageView

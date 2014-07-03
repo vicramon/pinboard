@@ -1,6 +1,8 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery-ui
+#= require filepicker
+#= require filepicker-config
 #= require handlebars
 #= require mousetrap
 #= require ember

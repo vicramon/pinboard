@@ -4,3 +4,5 @@ App.NewTextView = Ember.View.extend App.NewItemMixin,
 
   'data-kind': 'text'
   helper: -> $('<div />', class: 'new_text_helper')
+
+  cursorAt: { top: 5, left: 50 }

@@ -39,6 +39,8 @@ header
       .new_card
         cursor: pointer
         margin-bottom: -8px
+      .new_text, .new_image
+        cursor: pointer
       &.items
         padding-right: 10px
   .right
@@ -69,6 +71,11 @@ header
 .new_text_helper::after
   content: "New Text"
 
+.new_image_helper
+  background: image-url('icons/image_helper.png')
+  width: 82px
+  height: 50px
+
 section#board
   height: 100%
   margin-left: 11px
@@ -76,6 +83,11 @@ section#board
   position: relative
   padding: 56px 0 0 0
   margin-bottom: -56px
+  .image
+    position: absolute
+    border: 1px solid transparent
+    &.selected
+      border: $selected-border
   .text
     position: absolute
     font-size: 20px

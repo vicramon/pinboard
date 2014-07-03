@@ -1,6 +1,7 @@
 App.Item = DS.Model.extend
   kind:       DS.attr('string')
   text:       DS.attr('string')
+  url:        DS.attr('string')
   height:     DS.attr('number')
   width:      DS.attr('number')
   top:        DS.attr('number')
@@ -9,6 +10,7 @@ App.Item = DS.Model.extend
 
   isCard: Em.computed.equal 'kind', 'card'
   isText: Em.computed.equal 'kind', 'text'
+  isImage: Em.computed.equal 'kind', 'image'
 
   computedStyle: ( ->
     """
