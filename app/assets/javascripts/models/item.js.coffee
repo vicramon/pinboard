@@ -3,15 +3,15 @@ App.Item = DS.Model.extend
   text:       DS.attr('string')
   height:     DS.attr('number')
   width:      DS.attr('number')
-  x_position: DS.attr('number')
-  y_position: DS.attr('number')
+  top:        DS.attr('number')
+  left:       DS.attr('number')
   board:      DS.belongsTo('board')
 
   isCard: Em.computed.equal 'kind', 'card'
 
   computedStyle: ( ->
     """
-    top: #{@get('y_position')}px;
-    left: #{@get('x_position')}px;
+    top: #{@get('top')}px;
+    left: #{@get('left')}px;
     """
-  ).property('y_position', 'x_position')
+  ).property('top', 'left')

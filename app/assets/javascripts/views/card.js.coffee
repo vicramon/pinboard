@@ -28,8 +28,8 @@ App.CardView = Ember.View.extend
       stop: (event, ui) =>
         position = $(event.target).position()
         @get('model').setProperties
-          y_position: position.top
-          x_position: position.left
+          top: position.top
+          left: position.left
         @get('model').save()
 
   selectMeOnly: -> @set 'selectedItems', [@get('model')]

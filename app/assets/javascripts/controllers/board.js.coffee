@@ -6,8 +6,8 @@ App.BoardController = Ember.ObjectController.extend
     item = @store.createRecord 'item',
       kind: 'card'
       board: @get('model')
-      y_position: top
-      x_position: left
+      top: top
+      left: left
     item.save()
 
   destroySelected: -> @get('selectedItems').forEach (item) => item.destroyRecord()

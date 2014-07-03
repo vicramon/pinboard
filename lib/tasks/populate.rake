@@ -22,8 +22,8 @@ namespace :db do
     5.times do
       Item.create(
         kind: 'card',
-        x_position: 1 + rand(700),
-        y_position: 1 + rand(600),
+        top: 1 + rand(600),
+        left: 1 + rand(700),
         board: board,
         text: Faker::HipsterIpsum.sentence)
     end
