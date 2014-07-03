@@ -22,8 +22,22 @@ App.CardView = Ember.View.extend
       snap: '.card_container'
       snapMode: 'both'
       snapTolerance: 10
-      start: =>
-        @handleSelection()
+      start: (event, ui) =>
+        @handleDragStartSelection()
+
+        @get('selectedItems').forEach (item) =>
+          item.set 'startTop',  item.get('top')
+          item.set 'startLeft', item.get('left')
+
+      drag: (event, ui) =>
+        model = @get('model')
+        top_distance  =  model.get('top') - ui.position.top
+        left_distance = model.get('left') - ui.position.left
+
+        @get('selectedItems').forEach (item) =>
+          return if item == @get('model')
+          item.set 'top',  item.get('startTop')  - top_distance
+          item.set 'left', item.get('startLeft') - left_distance
 
       stop: (event, ui) =>
         position = $(event.target).position()
@@ -34,16 +48,20 @@ App.CardView = Ember.View.extend
 
   selectMeOnly: -> @set 'selectedItems', [@get('model')]
   selectMe: -> @get('selectedItems').addObject(@get('model'))
+  deselectMe: -> @get('selectedItems').removeObject(@get('model'))
 
   click: (event) ->
     @handleSelection()
     return false
 
+  handleDragStartSelection: ->
+    return @selectMe() if event.shiftKey or Em.isEmpty(@get('selectedItems'))
+    return @selectMeOnly() unless @get('selected')
+
   handleSelection: ->
-    if event.shiftKey
-      @selectMe()
-    else
-      @selectMeOnly()
+    return @deselectMe() if @get('selected')
+    return @selectMe() if event.shiftKey
+    @selectMeOnly()
 
   doubleClick: ->
     @set('controller.isEditing', true)
