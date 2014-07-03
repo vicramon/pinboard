@@ -8,4 +8,4 @@
 #= require_self
 #= require app
 
-window.App = Ember.Application.create(rootElement: '#ember-app', LOG_TRANSITIONS: true, LOG_TRANSITIONS_INTERNAL: true)
+window.App = Ember.Application.create(rootElement: '#ember-app')
