@@ -167,8 +167,8 @@
 .ui-selectable-helper {
 	position: absolute;
 	z-index: 100;
-	border: 1px solid #777;
-	background: #ccc;
+	border: 1px solid #444;
+	background: #ddd;
 	opacity: .2;
 }
 .ui-sortable-handle {

@@ -3,6 +3,8 @@
 
 $font-size: 14px
 $font-family: 'Roboto', Helvetica, Arial
+$selection-color: #49A1FF
+$selected-border: 1px solid $selection-color
 
 html, body
   font-family: $font-family
@@ -36,6 +38,7 @@ header
       padding-right: 25px
       .new_card
         cursor: pointer
+        margin-bottom: -8px
       &.items
         padding-right: 10px
   .right
@@ -59,6 +62,13 @@ header
   background: white
   border: 2px solid #ccc
 
+.new_text_helper
+  position: absolute
+  font-size: 20px
+
+.new_text_helper::after
+  content: "New Text"
+
 section#board
   height: 100%
   margin-left: 11px
@@ -66,13 +76,25 @@ section#board
   position: relative
   padding: 56px 0 0 0
   margin-bottom: -56px
+  .text
+    position: absolute
+    font-size: 20px
+    padding: 6px 12px 8px
+    border: 1px solid transparent
+    input[type=text]
+      font-family: $font-family
+      font-size: 20px
+      width: 90px
+      min-width: 90px
+    +cursor-grab
+    &.selected
+      border: $selected-border
   .card_container
     display: inline-block
     position: absolute
     &.selected
       .card
-        border: 2px solid #49A1FF
-        padding: 13px 19px
+        border: $selected-border
     .card
       background: white
       display: inline-block

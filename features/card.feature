@@ -1,4 +1,4 @@
-Feature: Card
+Feature: Card management
 
   Scenario: User drags in new card
     Given I am signed in

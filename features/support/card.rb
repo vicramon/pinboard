@@ -1,3 +1,4 @@
-def drag_new_card
-  find(".board_tools .new_card").drag_to(find("section#board"))
+def create_card(board=nil)
+  board ||= @board
+  @card = Fabricate(:card, board: board, top: 200, left: 300)
 end

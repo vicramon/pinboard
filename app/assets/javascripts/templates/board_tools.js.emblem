@@ -1,3 +1,4 @@
 .board_tools
   li.item Items:
   li: view App.NewCardView
+  li: view App.NewTextView

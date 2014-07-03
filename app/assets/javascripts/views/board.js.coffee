@@ -5,7 +5,11 @@ App.BoardView = Ember.View.extend
   didInsertElement: ->
     @droppable()
     @selectable()
+    @backspaceKey()
+
+  backspaceKey: ->
     Mousetrap.bind "backspace", =>
+      return if @get('controller.isEditing')
       @get('controller').destroySelected()
       return false
 
@@ -14,14 +18,15 @@ App.BoardView = Ember.View.extend
 
   droppable: ->
     @$().droppable
-      accept: ".new_card"
+      accept: ".new_card, .new_text"
       drop: (event, ui) =>
-        @get('controller').createCard(ui.offset.top-35, ui.offset.left-85)
+        kind = ui.draggable.data('kind')
+        @get('controller').createItem(kind, ui.offset.top, ui.offset.left)
 
   selectable: ->
     @$().selectable
       distance: 20
-      filter: ".card_container"
+      filter: ".card_container, .text"
       start: (event, ui) =>
         @get('controller').clearSelected() unless event.shiftKey
 

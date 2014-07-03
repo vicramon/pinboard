@@ -1,0 +1,7 @@
+if isEditing
+  view App.AutoWidthTextField value=model.text classNames="mousetrap"
+else
+  if model.text
+    model.text
+  else
+    | New Text
