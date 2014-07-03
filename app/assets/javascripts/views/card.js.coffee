@@ -21,7 +21,7 @@ App.CardView = Ember.View.extend
       containment: '#board'
       snap: '.card_container'
       snapMode: 'both'
-      snapTolerance: 10
+      snapTolerance: 5
       start: (event, ui) =>
         @handleDragStartSelection()
 
@@ -47,18 +47,18 @@ App.CardView = Ember.View.extend
         @get('model').save()
 
   selectMeOnly: -> @set 'selectedItems', [@get('model')]
-  selectMe: -> @get('selectedItems').addObject(@get('model'))
-  deselectMe: -> @get('selectedItems').removeObject(@get('model'))
+  selectMe: ->     @get('selectedItems').addObject(@get('model'))
+  deselectMe: ->   @get('selectedItems').removeObject(@get('model'))
 
   click: (event) ->
-    @handleSelection()
+    @handleClickSelection()
     return false
 
   handleDragStartSelection: ->
     return @selectMe() if event.shiftKey or Em.isEmpty(@get('selectedItems'))
     return @selectMeOnly() unless @get('selected')
 
-  handleSelection: ->
+  handleClickSelection: ->
     return @deselectMe() if @get('selected')
     return @selectMe() if event.shiftKey
     @selectMeOnly()

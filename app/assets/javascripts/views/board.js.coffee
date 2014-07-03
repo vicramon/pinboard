@@ -4,6 +4,7 @@ App.BoardView = Ember.View.extend
 
   didInsertElement: ->
     @droppable()
+    @selectable()
     Mousetrap.bind "backspace", =>
       @get('controller').destroySelected()
       return false
@@ -17,5 +18,15 @@ App.BoardView = Ember.View.extend
       drop: (event, ui) =>
         @get('controller').createCard(ui.offset.top, ui.offset.left)
 
-  click: ->
-    @set 'controller.selectedItems', []
+  selectable: ->
+    @$().selectable
+      distance: 20
+      filter: ".card_container"
+      start: (event, ui) =>
+        @get('controller').clearSelected() unless event.shiftKey
+
+      selected: (event, ui) =>
+        view = Ember.View.views[ui.selected.id]
+        view.selectMe()
+
+  click: -> @get('controller').clearSelected()
