@@ -3,8 +3,8 @@
 
 $font-size: 14px
 $font-family: 'Roboto', Helvetica, Arial
-$selection-color: #49A1FF
-$selected-border: 1px solid $selection-color
+$selection-color: #FFB973
+$selected-border: 2px solid $selection-color
 
 html, body
   font-family: $font-family
@@ -85,14 +85,15 @@ section#board
   margin-bottom: -56px
   .image
     position: absolute
-    border: 1px solid transparent
+    border: 2px solid transparent
+    +cursor-grab
     &.selected
       border: $selected-border
   .text
     position: absolute
     font-size: 20px
-    padding: 6px 12px 8px
-    border: 1px solid transparent
+    padding: 0px 6px 3px
+    border: 2px solid transparent
     input[type=text]
       font-family: $font-family
       font-size: 20px
@@ -107,6 +108,7 @@ section#board
     &.selected
       .card
         border: $selected-border
+        padding: 13px 19px
     .card
       background: white
       display: inline-block
