@@ -18,13 +18,3 @@ App.Item = DS.Model.extend Ember.Evented,
     left: #{@get('left')}px;
     """
   ).property('top', 'left')
-
-App.Item.reopenClass
-
-  startingOffset:
-    card:
-      top:  35
-      left: 85
-    text:
-      top:  0
-      left: 0

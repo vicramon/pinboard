@@ -32,7 +32,7 @@
   "app/assets/javascripts/mixins/*.js.coffee": {
     "command": "jmixin",
     "alternate": "spec/javascripts/mixins/%s_spec.js.coffee",
-    "template": "App.%S = Ember.Mixin.create"
+    "template": "App.%SMixin = Ember.Mixin.create"
   },
   "app/assets/javascripts/templates/*.js.emblem": {
     "command": "jtemplate"
