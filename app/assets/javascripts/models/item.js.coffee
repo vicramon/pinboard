@@ -1,4 +1,4 @@
-App.Item = DS.Model.extend
+App.Item = DS.Model.extend Ember.Evented,
   kind:       DS.attr('string')
   text:       DS.attr('string')
   url:        DS.attr('string')
@@ -8,8 +8,8 @@ App.Item = DS.Model.extend
   left:       DS.attr('number')
   board:      DS.belongsTo('board')
 
-  isCard: Em.computed.equal 'kind', 'card'
-  isText: Em.computed.equal 'kind', 'text'
+  isCard:  Em.computed.equal 'kind', 'card'
+  isText:  Em.computed.equal 'kind', 'text'
   isImage: Em.computed.equal 'kind', 'image'
 
   computedStyle: ( ->
@@ -18,3 +18,13 @@ App.Item = DS.Model.extend
     left: #{@get('left')}px;
     """
   ).property('top', 'left')
+
+App.Item.reopenClass
+
+  startingOffset:
+    card:
+      top:  35
+      left: 85
+    text:
+      top:  0
+      left: 0
