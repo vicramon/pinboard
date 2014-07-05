@@ -19,7 +19,7 @@ App.SelectableMixin = Ember.Mixin.create
     @$().draggable
       containment: '#board'
       distance: 15
-      snap: '.card_container, .text'
+      snap: '.card_container, .text, .image'
       snapMode: 'both'
       snapTolerance: 3
       start: (event, ui) =>
@@ -61,4 +61,3 @@ App.SelectableMixin = Ember.Mixin.create
       @invertSelection()
     else
       @selectMeOnly()
-
