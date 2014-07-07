@@ -2,27 +2,27 @@ When 'I drag in a new text' do
   drag_new_text
 end
 
-Then 'I should see my text'  do
+Then 'I should see my text' do
   expect(page).to have_css "#board .text"
 end
 
-Given 'I have text on my board'  do
+Given 'I have text on my board' do
   create_text
 end
 
-When 'I double click on that text'  do
+When 'I double click on that text' do
   find("#board .text").double_click
 end
 
-When 'I modify the text'  do
+When 'I modify the text' do
   find("#board .text input").set "Updated text"
 end
 
-When 'I click outside the text'  do
+When 'I click outside the text' do
   find("#board").click
 end
 
-Then /^the text should (?:be|remain) updated$/  do
+Then /^the text should (?:be|remain) updated$/ do
   expect(page).to have_css "#board .text", text: "Updated text"
   expect(@text.reload.text).to eq "Updated text"
 end
