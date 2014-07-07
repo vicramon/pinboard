@@ -10,4 +10,5 @@
 #= require_self
 #= require app
 
+Em.LOG_VERSION = false
 window.App = Ember.Application.create(rootElement: '#ember-app')
