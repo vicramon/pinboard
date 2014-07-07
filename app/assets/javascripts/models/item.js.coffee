@@ -13,8 +13,10 @@ App.Item = DS.Model.extend Ember.Evented,
   isImage: Em.computed.equal 'kind', 'image'
 
   computedStyle: ( ->
-    """
-    top: #{@get('top')}px;
-    left: #{@get('left')}px;
-    """
+    "top: #{@get('top')}px; left: #{@get('left')}px;"
   ).property('top', 'left')
+
+  imageComputedStyle: ( ->
+    return @get('computedStyle') unless @get('width') and @get('height')
+    @get('computedStyle') + "width: #{@get('width')}px; height: #{@get('height')}px;"
+  ).property('computedStyle', 'width', 'height')
