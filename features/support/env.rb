@@ -8,6 +8,8 @@ Capybara.default_driver = :poltergeist
 
 ActionController::Base.allow_rescue = false
 
+Capybara.default_wait_time = 5
+
 begin
   DatabaseCleaner.strategy = :truncation
 rescue NameError
