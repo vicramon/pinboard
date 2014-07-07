@@ -23,7 +23,7 @@ App.SelectableMixin = Ember.Mixin.create
       snapMode: 'both'
       snapTolerance: 3
       start: (event, ui) =>
-        @handleDragStartSelection()
+        @handleDragStartSelection(event)
 
         @get('selectedItems').forEach (item) =>
           item.set 'startTop',  item.get('top')
@@ -49,14 +49,14 @@ App.SelectableMixin = Ember.Mixin.create
   invertSelection: -> if @get('isSelected') then @deselectMe() else @selectMe()
 
   click: (event) ->
-    @handleClickSelection()
+    @handleClickSelection(event)
     return false
 
-  handleDragStartSelection: ->
+  handleDragStartSelection: (event) ->
     return @selectMe() if event.shiftKey or Em.isEmpty(@get('selectedItems'))
     return @selectMeOnly() unless @get('isSelected')
 
-  handleClickSelection: ->
+  handleClickSelection: (event) ->
     if event.shiftKey
       @invertSelection()
     else
