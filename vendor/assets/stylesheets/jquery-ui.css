@@ -167,7 +167,7 @@
 .ui-selectable-helper {
 	position: absolute;
 	z-index: 100;
-	border: 1px solid #444;
+	border: 1px solid #111;
 	background: #ddd;
 	opacity: .2;
 }
