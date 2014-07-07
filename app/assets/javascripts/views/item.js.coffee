@@ -1,5 +1,5 @@
-#= require ../mixins/selectable
-App.ItemView = Ember.View.extend App.SelectableMixin,
+#= require ../mixins/item_selectable
+App.ItemView = Ember.View.extend App.ItemSelectableMixin,
   classNameBindings: ['isSelected:selected']
   attributeBindings: ['style']
 

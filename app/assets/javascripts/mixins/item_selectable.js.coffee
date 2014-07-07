@@ -1,4 +1,4 @@
-App.SelectableMixin = Ember.Mixin.create
+App.ItemSelectableMixin = Ember.Mixin.create
   board: Em.computed.alias 'controller.controllers.board'
   model: Em.computed.alias 'controller.model'
   selectedItems: Em.computed.alias 'board.selectedItems'
