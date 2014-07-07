@@ -31,7 +31,7 @@ App.SelectableMixin = Ember.Mixin.create
 
       drag: (event, ui) =>
         model = @get('model')
-        top_distance  =  model.get('top') - ui.position.top
+        top_distance  = model.get('top')  - ui.position.top
         left_distance = model.get('left') - ui.position.left
 
         @get('selectedItems').without(@get('model')).forEach (item) =>

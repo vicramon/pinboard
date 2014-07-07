@@ -10,6 +10,5 @@ App.BoardController = Ember.ObjectController.extend App.ItemCreatorMixin,
     @clearSelected()
 
   isEditing: ( ->
-    return true if @get('items').findBy('isEditing')
-    return false
+    if @get('items').findBy('isEditing') then true else false
   ).property('items.@each.isEditing')
