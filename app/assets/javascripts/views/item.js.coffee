@@ -5,7 +5,7 @@ App.ItemView = Ember.View.extend App.ItemSelectableMixin,
 
   didInsertElement: ->
     @_super()
-    @get('controller.model').on 'focusMe', $.proxy(@, 'focusMe')
+    @get('model').on 'focusMe', $.proxy(@, 'focusMe')
 
   style: Em.computed.alias 'model.computedStyle'
 
