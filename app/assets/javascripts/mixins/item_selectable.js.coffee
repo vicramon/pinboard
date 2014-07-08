@@ -40,8 +40,8 @@ App.ItemSelectableMixin = Ember.Mixin.create
 
       stop: (event, ui) =>
         offset = $(event.target).offset()
-        top = offset.top + $("#board").scrollTop()
-        left = offset.left + $("#board").scrollLeft()
+        top = offset.top + $("#board").scrollTop() - $('#board').offset().top
+        left = offset.left + $("#board").scrollLeft() - $('#board').offset().left
         @get('model').setProperties top: top, left: left
         @get('selectedItems').forEach (item) => item.save() if item.get('isDirty')
 

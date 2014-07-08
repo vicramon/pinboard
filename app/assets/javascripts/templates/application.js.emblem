@@ -6,5 +6,6 @@ header
     link-to 'boards.index'
       img src='/assets/logo.png'
   outlet 'boardTools'
+.header-spacer
 
 outlet
