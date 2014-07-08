@@ -13,7 +13,7 @@ class Api::BoardsController < Api::BaseController
   private
 
   def boards
-    Board.where(user_id: current_user.id)
+    current_user.boards
   end
 
 end
